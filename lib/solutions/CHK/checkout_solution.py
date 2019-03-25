@@ -4,6 +4,7 @@
 # skus = unicode string
 def checkout(skus):
     import math
+    import re
     try:
         values = [a for a in skus]
 
@@ -184,12 +185,15 @@ def checkout(skus):
                   H_five + K_two + P_five + Q_three + U_four + V_three +
                   M_n)
         
-        checker = re.findall(r'[A-Z]+[0-9]+',question)
+        checker = re.findall(r'[-]',skus)
+        checker_two = re.findall(r'[a-z]',skus)
+
         if len(checker) == 0:
             ret = -1
     except:
         ret = -1
  
     return ret
+
 
 
