@@ -28,11 +28,9 @@ def checkout(skus):
                'W':20,'X':90,'Y':10,'Z':50}
 
         deals = []
-        checker = []
         for key in values:
             try:
                 deals.append(key)
-                checker.append(dic[key])
             except:
                 continue
             
@@ -185,11 +183,13 @@ def checkout(skus):
         ret = int(sum(re) + B_two + A_three + F_three +
                   H_five + K_two + P_five + Q_three + U_four + V_three +
                   M_n)
-
+        
+        checker = re.findall(r'[A-Z]+[0-9]+',question)
         if len(checker) == 0:
             ret = -1
     except:
         ret = -1
  
     return ret
+
 
