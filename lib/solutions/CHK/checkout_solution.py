@@ -17,7 +17,8 @@ def checkout(skus):
         
         a_deals = deals.count('A')
         b_deals = deals.count('B')
-        
+        e_deals = deals.count('E')
+
         no_a_deals = a_deals%3
         no_a_deals_fiver = a_deals%5
         
@@ -29,7 +30,7 @@ def checkout(skus):
             A_three = a_deals/3 * 130
 
         else:
-            A_three = math.floor(a_deals/5)*200 +  math.floor(a_deals - math.floor(a_deals/5)*5/3) * 130 + math.floor(a_deals - math.floor(a_deals/5)*5 - math.floor(a_deals/3)*3)*50
+            A_three = math.floor(a_deals/5)*200 +  math.floor((a_deals - math.floor(a_deals/5)*5)/3) * 130 + math.floor(a_deals - math.floor(a_deals/5)*5 - math.floor((a_deals - math.floor(a_deals/5)*5)/3)*3)*50
         
         no_b_deals = b_deals%2
         if no_b_deals == 0:
@@ -45,6 +46,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
