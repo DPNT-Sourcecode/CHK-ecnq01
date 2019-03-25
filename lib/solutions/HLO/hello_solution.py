@@ -9,5 +9,3 @@ def hello(friend_name):
     
     return message
 
-
-
