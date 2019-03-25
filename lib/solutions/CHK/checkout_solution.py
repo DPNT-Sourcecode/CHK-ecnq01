@@ -188,6 +188,7 @@ def checkout(skus):
         '''S/T/X/Y/Z'''
         comb = s_deals + t_deals + x_deals + y_deals + z_deals
         if comb%3 == 0:
+            Deal_three = comb/3*45
             
         
         
@@ -205,3 +206,4 @@ def checkout(skus):
         ret = -1
  
     return ret
+
