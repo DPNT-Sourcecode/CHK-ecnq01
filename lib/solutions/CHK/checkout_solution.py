@@ -118,9 +118,9 @@ def checkout(skus):
             
         '''R/Q'''
         
-                | R    | 50    | 3R get one Q free      |                    |
 
-        
+        no_r_deals = math.floor(r_deals/3)
+        q_deals = max(q_deals - no_r_deals,0)
         
         '''Q'''
         Q_three = 0
@@ -190,6 +190,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
