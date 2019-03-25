@@ -16,7 +16,7 @@ def checkout(skus):
 #        | Q    | 30    | 3Q for 80              |
         | R    | 50    | 3R get one Q free      |                    |
 #        | U    | 40    | 3U get one U free      |
-        | V    | 50    | 2V for 90, 3V for 130  |                      
+#        | V    | 50    | 2V for 90, 3V for 130  |                      
         '''
 
         dic = {'A':50,
@@ -61,7 +61,7 @@ def checkout(skus):
                #'Q':30,
                'R':50,'S':30,'T':20,
                #'U':40,
-               'V':50,
+               #'V':50,
                'W':20,'X':90,'Y':10,'Z':50}
         
         re = []
@@ -151,27 +151,23 @@ def checkout(skus):
 
 
         '''V'''
-        | V    | 50    | 2V for 90, 3V for 130  |                      
         V_three = 0
-        
-        if no_v_deals_fiver == 0:
-            A_three = v_deals/5 * 200
-#        elif no_a_deals == 0:
-#            A_three = a_deals/3 * 130
+        no_v_deals = v_deals%3
+        if no_v_deals == 0:
+            V_three = v_deals/3 * 130
+
         else:
-            V_three = math.floor(a_deals/5)*200 +  math.floor((a_deals - math.floor(a_deals/5)*5)/3) * 130 + math.floor(a_deals - math.floor(a_deals/5)*5 - math.floor((a_deals - math.floor(a_deals/5)*5)/3)*3)*50
+            V_three = math.floor(v_deals/3)*130 +  math.floor((v_deals - math.floor(v_deals/3)*3)/2) * 90 + math.floor(a_deals - math.floor(a_deals/3)*3 - math.floor((a_deals - math.floor(a_deals/3)*3)/2)*2)*50
+            
+            
+            
             
 #        rest = [a for a in re if a != 50 and a != 30 and a != 10]
         ret = int(sum(re) + B_two + A_three + F_three +
-                  H_five + K_two + P_five + Q_three + U_four)
+                  H_five + K_two + P_five + Q_three + U_four + V_three)
 
 
     except:
         ret = -1
  
     return ret
-
-
-
-
-
