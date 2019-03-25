@@ -60,25 +60,28 @@ def checkout(skus):
 #        no_a_deals = a_deals%3
         no_a_deals_fiver = a_deals%5
         
-        '''A'''
-        A_three = 0
-        
-        if no_a_deals_fiver == 0:
-            A_three = a_deals/10 * 80
-#        elif no_a_deals == 0:
-#            A_three = a_deals/3 * 130
-        else:
-            A_three = math.floor(a_deals/10)*80 +  math.floor((a_deals - math.floor(a_deals/10)*10)/5) * 45 + math.floor(a_deals - math.floor(a_deals/10)*10 - math.floor((a_deals - math.floor(a_deals/10)*10)/5)*5)*10
-
         '''H'''
         H_five = 0
         h_deals_fiver = h_deals%10
         if h_deals_fiver == 0:
-            H_five = h_deals/10 * 200
+            H_five = h_deals/10 * 80
+
+        
 #        elif no_a_deals == 0:
 #            A_three = a_deals/3 * 130
         else:
-            H_five = math.floor(a_deals/5)*200 +  math.floor((a_deals - math.floor(a_deals/5)*5)/3) * 130 + math.floor(a_deals - math.floor(a_deals/5)*5 - math.floor((a_deals - math.floor(a_deals/5)*5)/3)*3)*50
+            
+            H_five = math.floor(a_deals/10)*80 +  math.floor((a_deals - math.floor(a_deals/10)*10)/5) * 45 + math.floor(a_deals - math.floor(a_deals/10)*10 - math.floor((a_deals - math.floor(a_deals/10)*10)/5)*5)*10
+
+        '''A'''
+        A_three = 0
+        
+        if no_a_deals_fiver == 0:
+            A_three = a_deals/5 * 200
+#        elif no_a_deals == 0:
+#            A_three = a_deals/3 * 130
+        else:
+            A_three = math.floor(a_deals/5)*200 +  math.floor((a_deals - math.floor(a_deals/5)*5)/3) * 130 + math.floor(a_deals - math.floor(a_deals/5)*5 - math.floor((a_deals - math.floor(a_deals/5)*5)/3)*3)*50
         
 
         
@@ -107,6 +110,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
