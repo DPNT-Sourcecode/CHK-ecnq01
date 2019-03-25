@@ -7,14 +7,11 @@ def checkout(skus):
     try:
         values = re.findall(r'\b\w+\b',skus)
         dic = {'A':50,'B':30,'C':20,'D':15}
-        dic_two = {'C':20,'D':15}
         ret = []
-        ret_two = []
         deals = []
         for key in values:
             print(key)
             ret.append(dic[key])
-            ret_two.append(dic_two[key])
             deals.append(key)
         
         a_deals = deals.count('A')
@@ -40,5 +37,6 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
