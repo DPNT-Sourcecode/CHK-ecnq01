@@ -11,5 +11,6 @@ def checkout(skus):
     A_three = 130
     B_two = 45
  
-    raise NotImplementedError()
+    return -1
+
 
