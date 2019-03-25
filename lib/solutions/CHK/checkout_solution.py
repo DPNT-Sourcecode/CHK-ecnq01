@@ -14,7 +14,7 @@ def checkout(skus):
 #        | N    | 40    | 3N get one M free      |
 #        | P    | 50    | 5P for 200             |
 #        | Q    | 30    | 3Q for 80              |
-        | R    | 50    | 3R get one Q free      |                    |
+#        | R    | 50    | 3R get one Q free      |                    |
 #        | U    | 40    | 3U get one U free      |
 #        | V    | 50    | 2V for 90, 3V for 130  |                      
         '''
@@ -190,6 +190,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
