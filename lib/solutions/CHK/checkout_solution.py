@@ -26,7 +26,7 @@ def checkout(skus):
                'F':10,
                'G':20,'H':10,'I':35,'J':60,'K':70,'L':90,'M':15,'N':40,
                'O':10,'P':50,'Q':30,'R':50,'S':20,'T':20,'U':40,'V':50,
-               'W':20,'X':90,'Y':10,'Z':50}
+               'W':20,'X':17,'Y':20,'Z':21}
 
         deals = []
         for key in values:
@@ -72,7 +72,7 @@ def checkout(skus):
                'R':50,'S':20,'T':20,
                #'U':40,
                #'V':50,
-               'W':20,'X':90,'Y':10,'Z':50}
+               'W':20,'X':17,'Y':20,'Z':21}
         
         rett = []
         for key in values:
@@ -186,6 +186,10 @@ def checkout(skus):
             
             
         '''S/T/X/Y/Z'''
+        comb = s_deals + t_deals + x_deals + y_deals + z_deals
+        if comb%3 == 0:
+            
+        
         
             
         ret = int(sum(rett) + B_two + A_three + F_three +
@@ -201,10 +205,3 @@ def checkout(skus):
         ret = -1
  
     return ret
-
-
-
-
-
-
-
