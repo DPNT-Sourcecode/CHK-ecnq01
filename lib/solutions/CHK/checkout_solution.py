@@ -27,7 +27,13 @@ def checkout(skus):
                'O':10,'P':50,'Q':30,'R':50,'S':30,'T':20,'U':40,'V':50,
                'W':20,'X':90,'Y':10,'Z':50}
 
-        
+        deals = []
+        for key in values:
+            try:
+                deals.append(key)
+            except:
+                continue
+            
         a_deals = deals.count('A')
         b_deals = deals.count('B')
         e_deals = deals.count('E')
@@ -50,11 +56,9 @@ def checkout(skus):
                'W':20,'X':90,'Y':10,'Z':50}
         
         re = []
-        deals = []
         for key in values:
             try:
                 re.append(dic[key])
-                deals.append(key)
             except:
                 continue
 #        no_a_deals = a_deals%3
@@ -71,7 +75,7 @@ def checkout(skus):
 #            A_three = a_deals/3 * 130
         else:
             
-            H_five = math.floor(a_deals/10)*80 +  math.floor((a_deals - math.floor(a_deals/10)*10)/5) * 45 + math.floor(a_deals - math.floor(a_deals/10)*10 - math.floor((a_deals - math.floor(a_deals/10)*10)/5)*5)*10
+            H_five = math.floor(h_deals/10)*80 +  math.floor((h_deals - math.floor(h_deals/10)*10)/5) * 45 + math.floor(h_deals - math.floor(h_deals/10)*10 - math.floor((h_deals - math.floor(h_deals/10)*10)/5)*5)*10
 
         '''A'''
         A_three = 0
@@ -103,13 +107,14 @@ def checkout(skus):
             
             
 #        rest = [a for a in re if a != 50 and a != 30 and a != 10]
-        ret = int(sum(re) + B_two + A_three + F_three)
+        ret = int(sum(re) + B_two + A_three + F_three + H_five)
 
 
     except:
         ret = -1
  
     return ret
+
 
 
 
