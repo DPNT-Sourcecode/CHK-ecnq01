@@ -9,7 +9,7 @@ def checkout(skus):
 
         '''
         
-        | H    | 10    | 5H for 45, 10H for 80  |                     |
+#        | H    | 10    | 5H for 45, 10H for 80  |                     |
         | K    | 80    | 2K for 150             |                       |
         | N    | 40    | 3N get one M free      |
         | P    | 50    | 5P for 200             |
@@ -90,6 +90,14 @@ def checkout(skus):
             A_three = math.floor(a_deals/5)*200 +  math.floor((a_deals - math.floor(a_deals/5)*5)/3) * 130 + math.floor(a_deals - math.floor(a_deals/5)*5 - math.floor((a_deals - math.floor(a_deals/5)*5)/3)*3)*50
         
 
+        '''K'''
+        K_two = 0
+        no_k_deals = k_deals%2
+        if no_k_deals == 0:
+            K_two = k_deals/2 * 150
+        else:
+            B_two = math.floor(b_deals/2) * 150 + 80* (b_deals%2)
+
         
         no_e_deals = math.floor(e_deals/2)
       
@@ -116,3 +124,4 @@ def checkout(skus):
         ret = -1
  
     return ret
+
