@@ -19,18 +19,14 @@ def checkout(skus):
         | V    | 50    | 2V for 90, 3V for 130  |                      
         '''
 
-        dic = {#'A':50,
-               #'B':30,
+        dic = {'A':50,
+               'B':30,
                'C':20,'D':15,'E':40,
-               #'F':10,
+               'F':10,
                'G':20,'H':10,'I':35,'J':60,'K':80,'L':90,'M':15,'N':40,
                'O':10,'P':50,'Q':30,'R':50,'S':30,'T':20,'U':40,'V':50,
                'W':20,'X':90,'Y':10,'Z':50}
-        re = []
-        deals = []
-        for key in values:
-            re.append(dic[key])
-            deals.append(key)
+
         
         a_deals = deals.count('A')
         b_deals = deals.count('B')
@@ -45,7 +41,19 @@ def checkout(skus):
         u_deals = deals.count('U')
         v_deals = deals.count('V')
 
-
+        dic = {#'A':50,
+               #'B':30,
+               'C':20,'D':15,'E':40,
+               #'F':10,
+               'G':20,'H':10,'I':35,'J':60,'K':80,'L':90,'M':15,'N':40,
+               'O':10,'P':50,'Q':30,'R':50,'S':30,'T':20,'U':40,'V':50,
+               'W':20,'X':90,'Y':10,'Z':50}
+        
+        re = []
+        deals = []
+        for key in values:
+            re.append(dic[key])
+            deals.append(key)
 #        no_a_deals = a_deals%3
         no_a_deals_fiver = a_deals%5
         
@@ -96,5 +104,6 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
