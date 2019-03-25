@@ -59,7 +59,9 @@ def checkout(skus):
                'O':10,
                #'P':50,
                #'Q':30,
-               'R':50,'S':30,'T':20,'U':40,'V':50,
+               'R':50,'S':30,'T':20,
+               #'U':40,
+               'V':50,
                'W':20,'X':90,'Y':10,'Z':50}
         
         re = []
@@ -131,6 +133,7 @@ def checkout(skus):
         else:
             B_two = math.floor(b_deals/2) * 45 + 30* (b_deals%2)
             
+        '''F'''
         F_three = 0
         no_f_deals = f_deals%3    
         if no_f_deals == 0 and f_deals > 0:
@@ -138,16 +141,25 @@ def checkout(skus):
         else:
             F_three = math.floor(f_deals/3) *2 * 10 + (f_deals%3)*10
             
+        '''U'''
+        U_four = 0
+        no_u_deals = u_deals%4    
+        if no_u_deals == 0 and u_deals > 0:
+            U_four = (u_deals - u_deals/4)*40
+        else:
+            U_four = math.floor(u_deals/4) *3 * 40 + (u_deals%4)*40
+
             
 #        rest = [a for a in re if a != 50 and a != 30 and a != 10]
         ret = int(sum(re) + B_two + A_three + F_three +
-                  H_five + K_two + P_five + Q_three)
+                  H_five + K_two + P_five + Q_three + U_four)
 
 
     except:
         ret = -1
  
     return ret
+
 
 
 
