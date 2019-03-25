@@ -68,10 +68,10 @@ def checkout(skus):
                #'V':50,
                'W':20,'X':90,'Y':10,'Z':50}
         
-        re = []
+        rett = []
         for key in values:
             try:
-                re.append(dic[key])
+                rett.append(dic[key])
             except:
                 continue
 #        no_a_deals = a_deals%3
@@ -181,7 +181,7 @@ def checkout(skus):
             
             
             
-        ret = int(sum(re) + B_two + A_three + F_three +
+        ret = int(sum(rett) + B_two + A_three + F_three +
                   H_five + K_two + P_five + Q_three + U_four + V_three +
                   M_n)
         
@@ -194,6 +194,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
