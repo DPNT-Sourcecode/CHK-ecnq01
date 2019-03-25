@@ -41,11 +41,13 @@ def checkout(skus):
         rest = [a for a in re if a != 50 and a != 30]
         ret = int(sum(rest) + B_two + A_three)
 
+        no_e_deals = e_deals%2
 
     except:
         ret = -1
  
     return ret
+
 
 
 
