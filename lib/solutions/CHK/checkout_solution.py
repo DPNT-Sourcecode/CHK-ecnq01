@@ -116,10 +116,3 @@ def checkout(skus):
         ret = -1
  
     return ret
-
-
-
-
-
-
-
