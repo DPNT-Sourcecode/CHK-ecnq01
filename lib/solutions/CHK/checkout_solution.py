@@ -26,20 +26,24 @@ def checkout(skus):
         elif a_deals < 3:
             A_three = 0
         
-        if b_deals >= 2:
+        if b_deals >= 2 and b_deals < 4:
             B_two = 45
             B_two = B_two + (b_deals-2)*30
+        elif b_deals >= 4:
+            B_two = 90
+            B_two = B_two + (b_deals-4)*30
         elif b_deals < 2:
             B_two = 0
             
         if B_two == 0  and A_three == 0:
             ret = sum(re)
         elif B_two == 0 and A_three != 0:
-            ret = sum([a for a in re if a != 30]) + B_two + A_three
+            ret = sum([a for a in re if a != 50]) + B_two + A_three
         elif B_two != 0 and A_three == 0:
-            ret = sum([a for a in re if a !=50]) + B_two + A_three
+            ret = sum([a for a in re if a !=30]) + B_two + A_three
 
     except:
         ret = -1
  
     return ret
+
