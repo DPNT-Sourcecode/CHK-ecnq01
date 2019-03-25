@@ -200,6 +200,9 @@ def checkout(skus):
                 cc = comb - i
                 if cc < comp:
                     diff = comp - cc
+                    comb = comb - i + diff
+                    comb_list[cnt] = comb_list[cnt]-i+diff                  
+                else:
                     comb = comb - i
                     comb_list[cnt] = comb_list[cnt]-i
                     if comb == comp:
@@ -222,11 +225,3 @@ def checkout(skus):
         ret = -1
  
     return ret
-
-
-
-
-
-
-
-
