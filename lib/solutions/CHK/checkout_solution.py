@@ -35,7 +35,7 @@ def checkout(skus):
         
         
         no_b_deals = (b_deals-no_e_deals)%2
-        b_deals = b_deals- no_e_deals
+        b_deals = max(b_deals - no_e_deals,0)
         if no_b_deals == 0:
             B_two = b_deals/2 * 45
         else:
@@ -49,4 +49,5 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
