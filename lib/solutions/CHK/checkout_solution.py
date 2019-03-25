@@ -19,13 +19,20 @@ def checkout(skus):
         
         if a_deals >= 3:
             A_three = 130
-     
-            ret = sum(ret)
+            A_three = A_three + (a_deals-3)*50
+        elif a_deals < 3:
+            A_three = 0
+        
+        if b_deals >= 2:
+            B_two = 45
+            B_two = B_two + (b_deals-2)*30
+        elif b_deals < 2:
+            B_two = 0
             
-        A_three = 130
-        B_two = 45
+
         ret = A
     except:
         ret = -1
  
     return ret
+
