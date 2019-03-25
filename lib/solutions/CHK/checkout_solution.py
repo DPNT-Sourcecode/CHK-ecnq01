@@ -186,8 +186,10 @@ def checkout(skus):
                   H_five + K_two + P_five + Q_three + U_four + V_three +
                   M_n)
 
-        
+        if len(checker) == 0:
+            ret = -1
     except:
         ret = -1
  
     return ret
+
