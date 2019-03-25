@@ -2,10 +2,9 @@
 
 # noinspection PyUnusedLocal
 # skus = unicode string
-import re
 def checkout(skus):
     try:
-        values = re.findall(r'\b\w+\b',skus)
+        values = [a for a in skus]
         dic = {'A':50,'B':30,'C':20,'D':15}
         ret = []
         deals = []
@@ -36,6 +35,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
