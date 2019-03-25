@@ -38,12 +38,13 @@ def checkout(skus):
         if B_two == 0  and A_three == 0:
             ret = sum(re)
         elif B_two == 0 and A_three != 0:
-            ret = sum([a for a in re if a != 50]) + B_two + A_three
+            ret = sum([a for a in re if a != 50])  + A_three
         elif B_two != 0 and A_three == 0:
-            ret = sum([a for a in re if a !=30]) + B_two + A_three
+            ret = sum([a for a in re if a !=30]) + B_two 
 
     except:
         ret = -1
  
     return ret
+
 
