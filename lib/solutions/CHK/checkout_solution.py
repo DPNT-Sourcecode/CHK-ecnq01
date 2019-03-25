@@ -13,7 +13,7 @@ def checkout(skus):
 #        | K    | 80    | 2K for 150             |                       |
         | N    | 40    | 3N get one M free      |
 #        | P    | 50    | 5P for 200             |
-        | Q    | 30    | 3Q for 80              |
+#        | Q    | 30    | 3Q for 80              |
         | R    | 50    | 3R get one Q free      |                    |
         | U    | 40    | 3U get one U free      |
         | V    | 50    | 2V for 90, 3V for 130  |                      
@@ -56,7 +56,10 @@ def checkout(skus):
                'I':35,'J':60,
                #'K':80,
                'L':90,'M':15,'N':40,
-               'O':10,'P':50,'Q':30,'R':50,'S':30,'T':20,'U':40,'V':50,
+               'O':10,
+               #'P':50,
+               #'Q':30,
+               'R':50,'S':30,'T':20,'U':40,'V':50,
                'W':20,'X':90,'Y':10,'Z':50}
         
         re = []
@@ -106,8 +109,17 @@ def checkout(skus):
         if no_p_deals == 0:
             P_five = p_deals/5 * 200
         else:
-            P_five = math.floor(p_deals/5) * 150 + 50* (p_deals%5)
+            P_five = math.floor(p_deals/5) * 200 + 50* (p_deals%5)
             
+        '''Q'''
+        Q_three = 0
+        no_q_deals = q_deals%3
+        if no_q_deals == 0:
+            Q_three = q_deals/3 * 80
+        else:
+            Q_three = math.floor(q_deals/3) * 80 + 30* (q_deals%3)
+
+
             
             
         no_e_deals = math.floor(e_deals/2)
@@ -129,12 +141,13 @@ def checkout(skus):
             
 #        rest = [a for a in re if a != 50 and a != 30 and a != 10]
         ret = int(sum(re) + B_two + A_three + F_three +
-                  H_five + K_two + P_five)
+                  H_five + K_two + P_five + Q_three)
 
 
     except:
         ret = -1
  
     return ret
+
 
 
