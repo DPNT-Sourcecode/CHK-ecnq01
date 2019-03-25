@@ -13,6 +13,15 @@ def checkout(skus):
             print(key)
             ret.append(dic[key])
             deals.append(key)
+        
+        a_deals = deals.count('A')
+        b_deals = deals.count('B')
+        
+        if a_deals >= 3:
+            A_three = 130
+     
+            ret = sum(ret)
+            
         A_three = 130
         B_two = 45
         ret = A
@@ -20,8 +29,3 @@ def checkout(skus):
         ret = -1
  
     return ret
-
-
-
-
-
