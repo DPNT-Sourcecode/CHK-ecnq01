@@ -195,19 +195,20 @@ def checkout(skus):
             Deal_three = comb/3*45
         else:
             comp = comb%3
+            offer = math.floor(comb/3)*45
             for cnt,i in enumerate(comb_list):
                 comb = comb - i
                 comb_list[cnt] = comb_list[cnt]-i
                 if comb == comp:
                     break
-            Deal_three = sum(np.array(comb_list) * cost)
+            Deal_three = offer + sum(np.array(comb_list) * cost)
             
         
         
             
         ret = int(sum(rett) + B_two + A_three + F_three +
                   H_five + K_two + P_five + Q_three + U_four + V_three +
-                  M_n)
+                  M_n + Deal_three)
         
         checker = re.findall(r'[-]',skus)
         checker_two = re.findall(r'[a-z]',skus)
@@ -218,6 +219,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
