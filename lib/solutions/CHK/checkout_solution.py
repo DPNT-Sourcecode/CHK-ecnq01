@@ -17,13 +17,8 @@ def checkout(skus):
         a_deals = deals.count('A')
         b_deals = deals.count('B')
         
-        if a_deals >= 3 and a_deals < 6:
-            A_three = 130
-            A_three = A_three + (a_deals-3)*50
-        elif a_deals >= 6:
-            A_three = 260
-            A_three = A_three + (a_deals-6)*50
-        elif a_deals < 3:
+        if a_deals > 3:
+            no_a_deals = a_deals/3
             A_three = 0
         
         if b_deals >= 2 and b_deals < 4:
@@ -46,5 +41,6 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
