@@ -5,10 +5,7 @@
 def checkout(skus):
     try:
         values = [a for a in skus]
-        values = ['A'  if a == 'a' else a for a in values]
-        values = ['B'  if b == 'b' else b for b in values]
-        values = ['C'  if c == 'c' else c for c in values]
-        values = ['D'  if d == 'd' else d for d in values]
+
 
         dic = {'A':50,'B':30,'C':20,'D':15}
         ret = []
@@ -20,9 +17,12 @@ def checkout(skus):
         a_deals = deals.count('A')
         b_deals = deals.count('B')
         
-        if a_deals >= 3:
+        if a_deals >= 3 and a_deals < 6:
             A_three = 130
             A_three = A_three + (a_deals-3)*50
+        elif a_deals >6:
+            A_three = 260
+            A_three = A_three + (a_deals-6)*50
         elif a_deals < 3:
             A_three = 0
         
@@ -40,6 +40,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
