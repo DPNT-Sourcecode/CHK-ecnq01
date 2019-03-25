@@ -28,9 +28,11 @@ def checkout(skus):
                'W':20,'X':90,'Y':10,'Z':50}
 
         deals = []
+        checker = []
         for key in values:
             try:
                 deals.append(key)
+                checker.append(dic[key])
             except:
                 continue
             
@@ -189,11 +191,3 @@ def checkout(skus):
         ret = -1
  
     return ret
-
-
-
-
-
-
-
-
