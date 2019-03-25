@@ -188,12 +188,13 @@ def checkout(skus):
         checker = re.findall(r'[-]',skus)
         checker_two = re.findall(r'[a-z]',skus)
 
-        if len(checker) == 0:
+        if len(checker) > 0 or len(checker_two) > 0:
             ret = -1
     except:
         ret = -1
  
     return ret
+
 
 
 
