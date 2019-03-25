@@ -24,7 +24,7 @@ def checkout(skus):
         else:
             A_three = math.floor(a_deals/3) * 130 + 50* (a_deals%3)
         
-        no_b_deals = b_deals%3
+        no_b_deals = b_deals%2
         if no_b_deals == 0:
             B_two = b_deals/2 * 45
         else:
@@ -38,11 +38,3 @@ def checkout(skus):
         ret = -1
  
     return ret
-
-
-
-
-
-
-
-
