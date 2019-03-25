@@ -197,10 +197,13 @@ def checkout(skus):
             comp = comb%3
             offer = math.floor(comb/3)*45
             for cnt,i in enumerate(comb_list):
-                comb = comb - i
-                comb_list[cnt] = comb_list[cnt]-i
-                if comb == comp:
-                    break
+                cc = comb - i
+                if cc < comp:
+                    diff = comp - cc
+                    comb = comb - i
+                    comb_list[cnt] = comb_list[cnt]-i
+                    if comb == comp:
+                        break
             Deal_three = offer + sum(np.array(comb_list) * cost)
             
         
@@ -219,6 +222,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
