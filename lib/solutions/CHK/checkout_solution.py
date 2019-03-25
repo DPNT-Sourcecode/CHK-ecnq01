@@ -6,10 +6,10 @@ import re
 def checkout(skus):
     try:
         values = re.findall(r'\b\w+\b',skus)
-        A = 50
-        B = 30
-        C = 20
-        D = 15
+        dic = {'A':50,'B':30,'C':20,'D':15}
+        
+        for key, value in dic:
+            print(key,value)
         A_three = 130
         B_two = 45
         ret = A
@@ -17,6 +17,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
