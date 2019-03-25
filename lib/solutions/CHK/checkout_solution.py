@@ -20,7 +20,7 @@ def checkout(skus):
         if a_deals >= 3 and a_deals < 6:
             A_three = 130
             A_three = A_three + (a_deals-3)*50
-        elif a_deals >6:
+        elif a_deals >= 6:
             A_three = 260
             A_three = A_three + (a_deals-6)*50
         elif a_deals < 3:
@@ -40,6 +40,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
