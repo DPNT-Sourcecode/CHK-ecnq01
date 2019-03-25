@@ -5,6 +5,7 @@
 def checkout(skus):
     import math
     import re
+    import numpy as np
     try:
         values = [a for a in skus]
 
@@ -69,10 +70,11 @@ def checkout(skus):
                'O':10,
                #'P':50,
                #'Q':30,
-               'R':50,'S':20,'T':20,
+               'R':50,#'S':20,'T':20,
                #'U':40,
                #'V':50,
-               'W':20,'X':17,'Y':20,'Z':21}
+               'W':20}
+               #'X':17,'Y':20,'Z':21}
         
         rett = []
         for key in values:
@@ -188,6 +190,7 @@ def checkout(skus):
         '''S/T/X/Y/Z'''
         comb = s_deals + t_deals + x_deals + y_deals + z_deals
         comb_list = [z_deals, s_deals , t_deals , y_deals  ,x_deals]
+        cost = np.array([21,20,20,20,17])
         if comb%3 == 0:
             Deal_three = comb/3*45
         else:
@@ -197,7 +200,7 @@ def checkout(skus):
                 comb_list[cnt] = comb_list[cnt]-i
                 if comb == comp:
                     break
-                
+            Deal_three = sum(np.array(comb_list) * cost)
             
         
         
@@ -215,6 +218,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
