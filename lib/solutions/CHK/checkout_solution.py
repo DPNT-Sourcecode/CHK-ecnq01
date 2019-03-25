@@ -41,6 +41,7 @@ def checkout(skus):
         h_deals = deals.count('H')
         k_deals = deals.count('K')
         n_deals = deals.count('N')
+        m_deals = deals.count('M')
         p_deals = deals.count('P')
         q_deals = deals.count('Q')
         r_deals = deals.count('R')
@@ -122,8 +123,13 @@ def checkout(skus):
             Q_three = math.floor(q_deals/3) * 80 + 30* (q_deals%3)
 
 
-            
-            
+        '''N/M'''
+        
+        no_n_deals = math.floor(n_deals/3)
+        no_m_deals = (no_m_deals-n_deals)%3
+        no_m_deals = max(no_m_deals - n_deals,0)
+        
+        '''B/E'''    
         no_e_deals = math.floor(e_deals/2)
       
         no_b_deals = (b_deals-no_e_deals)%2
@@ -171,3 +177,4 @@ def checkout(skus):
         ret = -1
  
     return ret
+
