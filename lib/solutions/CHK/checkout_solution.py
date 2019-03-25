@@ -48,7 +48,7 @@ def checkout(skus):
         if no_f_deals == 0 and f_deals > 0:
             F_three = (f_deals - f_deals/3)*10
         else:
-            F_three = math.floor(f_deals/3) * 10 + f_deals%3
+            F_three = math.floor(f_deals/3) *2 * 10 + (f_deals%3)*10
             
             
         rest = [a for a in re if a != 50 and a != 30 and a != 10]
@@ -59,6 +59,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
