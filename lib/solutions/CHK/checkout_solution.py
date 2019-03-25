@@ -180,17 +180,16 @@ def checkout(skus):
             
             
             
-#        rest = [a for a in re if a != 50 and a != 30 and a != 10]
         ret = int(sum(re) + B_two + A_three + F_three +
                   H_five + K_two + P_five + Q_three + U_four + V_three +
                   M_n)
 
-        if ret == 0:
-            ret = -1
+        
     except:
         ret = -1
  
     return ret
+
 
 
 
