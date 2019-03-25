@@ -7,9 +7,12 @@ def checkout(skus):
     try:
         values = re.findall(r'\b\w+\b',skus)
         dic = {'A':50,'B':30,'C':20,'D':15}
-        
-        for key, value in dic:
-            print(key,value)
+        ret = []
+        deals = []
+        for key in values:
+            print(key)
+            ret.append(dic[key])
+            deals.append(key)
         A_three = 130
         B_two = 45
         ret = A
@@ -17,6 +20,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
