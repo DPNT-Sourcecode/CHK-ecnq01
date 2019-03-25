@@ -48,6 +48,12 @@ def checkout(skus):
         r_deals = deals.count('R')
         u_deals = deals.count('U')
         v_deals = deals.count('V')
+        s_deals = deals.count('S')
+        t_deals = deals.count('T')
+        x_deals = deals.count('X')
+        y_deals = deals.count('Y')
+        z_deals = deals.count('Z')
+
 
         dic = {#'A':50,
                #'B':30,
@@ -179,7 +185,8 @@ def checkout(skus):
             V_three = math.floor(v_deals/3)*130 +  math.floor((v_deals - math.floor(v_deals/3)*3)/2) * 90 + math.floor(v_deals - math.floor(v_deals/3)*3 - math.floor((v_deals - math.floor(v_deals/3)*3)/2)*2)*50
             
             
-            
+        '''S/T/X/Y/Z'''
+        
             
         ret = int(sum(rett) + B_two + A_three + F_three +
                   H_five + K_two + P_five + Q_three + U_four + V_three +
@@ -194,6 +201,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
