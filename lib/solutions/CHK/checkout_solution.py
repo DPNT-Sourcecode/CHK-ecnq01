@@ -28,7 +28,7 @@ def checkout(skus):
         if no_b_deals == 0:
             B_two = b_deals/2 * 45
         else:
-            B_two = math.floor(a_deals/2) * 45 + 30* (a_deals%2)
+            B_two = math.floor(b_deals/2) * 45 + 30* (b_deals%2)
             
         rest = [a for a in re if a != 50 and a != 30]
         ret = int(sum(rest) + B_two + A_three)
@@ -38,6 +38,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
