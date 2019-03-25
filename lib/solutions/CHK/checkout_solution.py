@@ -192,9 +192,11 @@ def checkout(skus):
             Deal_three = comb/3*45
         else:
             comp = comb%3
-            i = comb
-            while i > comp:
-                comb = comb - z_deals
+            for i in comb_list:
+                comb = comb - i
+                if comb == comp:
+                    break
+                
             
         
         
@@ -212,6 +214,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
