@@ -3,6 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+    import math
     try:
         values = [a for a in skus]
 
@@ -20,28 +21,26 @@ def checkout(skus):
         if a_deals > 3:
             no_a_deals = a_deals%3
             if no_a_deals == 0:
-                A_three =  a_deals/3 * 130
+                A_three = a_deals/3 * 130
+            else:
+                A_three = math.floor(a_deals/3) * 130 + 50* (a_deals%3)
         
-        if b_deals >= 2 and b_deals < 4:
-            B_two = 45
-            B_two = B_two + (b_deals-2)*30
-        elif b_deals >= 4:
-            B_two = 90
-            B_two = B_two + (b_deals-4)*30
-        elif b_deals < 2:
-            B_two = 0
+        if b_deals > 2:
+            no_b_deals = b_deals%3
+            if no_b_deals == 0:
+                B_two = b_deals/2 * 45
+            else:
+                B_two = math.floor(a_deals/2) * 45 + 30* (a_deals%2)
             
         if B_two == 0  and A_three == 0:
             ret = sum(re)
-        elif B_two == 0 and A_three != 0:
-            ret = sum([a for a in re if a != 50])  + A_three
-        elif B_two != 0 and A_three == 0:
-            ret = sum([a for a in re if a !=30]) + B_two 
+
 
     except:
         ret = -1
  
     return ret
+
 
 
 
