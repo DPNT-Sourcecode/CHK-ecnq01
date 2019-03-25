@@ -8,7 +8,7 @@ def checkout(skus):
         values = [a for a in skus]
 
 
-        dic = {'A':50,'B':30,'C':20,'D':15,'E':40}
+        dic = {'A':50,'B':30,'C':20,'D':15,'E':40,'F':10}
         re = []
         deals = []
         for key in values:
@@ -18,6 +18,8 @@ def checkout(skus):
         a_deals = deals.count('A')
         b_deals = deals.count('B')
         e_deals = deals.count('E')
+        f_deals = deals.count('F')
+
 
 #        no_a_deals = a_deals%3
         no_a_deals_fiver = a_deals%5
@@ -49,6 +51,3 @@ def checkout(skus):
         ret = -1
  
     return ret
-
-
-
