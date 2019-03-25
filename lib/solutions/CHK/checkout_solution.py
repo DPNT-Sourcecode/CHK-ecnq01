@@ -8,10 +8,10 @@ def checkout(skus):
 
 
         dic = {'A':50,'B':30,'C':20,'D':15}
-        ret = []
+        re = []
         deals = []
         for key in values:
-            ret.append(dic[key])
+            re.append(dic[key])
             deals.append(key)
         
         a_deals = deals.count('A')
@@ -33,13 +33,14 @@ def checkout(skus):
             B_two = 0
             
         if B_two == 0  and A_three == 0:
-            ret = sum(ret)
+            ret = sum(re)
         else:
-            ret = sum([a for a in ret if a != 30 and a !=50]) + B_two + A_three
+            ret = sum([a for a in re if a != 30 and a !=50]) + B_two + A_three
     except:
         ret = -1
  
     return ret
+
 
 
 
