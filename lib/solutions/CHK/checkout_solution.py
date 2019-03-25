@@ -175,7 +175,7 @@ def checkout(skus):
             V_three = v_deals/3 * 130
 
         else:
-            V_three = math.floor(v_deals/3)*130 +  math.floor((v_deals - math.floor(v_deals/3)*3)/2) * 90 + math.floor(a_deals - math.floor(a_deals/3)*3 - math.floor((a_deals - math.floor(a_deals/3)*3)/2)*2)*50
+            V_three = math.floor(v_deals/3)*130 +  math.floor((v_deals - math.floor(v_deals/3)*3)/2) * 90 + math.floor(v_deals - math.floor(v_deals/3)*3 - math.floor((v_deals - math.floor(v_deals/3)*3)/2)*2)*50
             
             
             
@@ -190,6 +190,7 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
 
 
