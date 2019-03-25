@@ -125,9 +125,13 @@ def checkout(skus):
 
         '''N/M'''
         
+        M_n = 0
         no_n_deals = math.floor(n_deals/3)
-        no_m_deals = (no_m_deals-n_deals)%3
-        no_m_deals = max(no_m_deals - n_deals,0)
+        no_m_deals = (m_deals-no_n_deals)%3
+        no_m_deals = max(m_deals - no_n_deals,0)
+        
+        M_n = no_m_deals * 
+        
         
         '''B/E'''    
         no_e_deals = math.floor(e_deals/2)
@@ -177,4 +181,5 @@ def checkout(skus):
         ret = -1
  
     return ret
+
 
